@@ -1,0 +1,42 @@
+{
+	"info": {
+		"_postman_id": "8cf52f0c-7234-478a-b1da-45557415097c",
+		"name": "Postman Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Backend Metrics",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"maximum_distance\": 100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3300/v1/metrics/day",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3300",
+					"path": [
+						"v1",
+						"metrics",
+						"day"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
