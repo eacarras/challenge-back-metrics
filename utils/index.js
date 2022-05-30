@@ -4,7 +4,7 @@ const path = require('path');
 class Utils {
   
   /**
-   * parserData
+   * parserDataTestMode
    */
   static parserDataTestMode(type) {
     const fileName = type === 'day'
@@ -40,6 +40,25 @@ class Utils {
       console.info('THERE ARE MULTIPLE VALUES WITH NOT DATA', notData);
     }
     return finalInformation;
+  }
+
+  /**
+   * transformDataToInformation
+   */
+  static transformDataToInformation(data) {
+    return data.reduce((acc, info) => {
+      if (!info[0]) {
+        return acc;
+      }
+      // info[3] => JSON
+      acc[info[0]] = {
+        averageConsumpsition: 254729,
+        averageInactivity: "12:20",
+        averageActivity: "12:30",
+      }
+
+      return acc;
+    }, {});
   }
 }
 
