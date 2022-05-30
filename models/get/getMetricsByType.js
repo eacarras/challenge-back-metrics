@@ -30,7 +30,7 @@ const getMetricsByType = (type="day") => new Promise((resolve, reject) => {
   
   try {
     const finalParserData = {};
-    resolve(finalParserData);
+    resolve(data);
   } catch (e) {
     return reject(new ErrorClass({
       statusCode: 500,
