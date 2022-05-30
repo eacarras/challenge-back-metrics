@@ -3,6 +3,8 @@ const path = require('path');
 const dotenv = require('dotenv');
 const express = require('express');
 
+const MetricsController = require('./controllers/metrics');
+
 // Initialize dotenv and express server
 const app = express();
 dotenv.config({ path: path.join(__dirname, './.env') });
@@ -11,9 +13,12 @@ if (process.env.NODE_ENV !== 'production') {
   console.log('RUNNING IN TESTING MODE');
 }
 
-// enable cors
+// Enable CORS
 app.use(cors());
 app.options('*', cors());
+
+// Controllers
+app.use('/v1/metrics', MetricsController);
 
 // Send back a 404 error for any unknown api request
 app.use((_, res) => {
